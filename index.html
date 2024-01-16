@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>schnitzel's site</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <div class="name">
+          <h1><b id="hello">hi</b>, i'm schnitzel</h1>
+          <small>(aka qizzle)</small>
+        </div>
+        <p>I'm apparently a 16 year old programmer from Düsseldorf, Germany.</p>
+      </section>
+      <section>
+        <h2>me</h2>
+        <ul>
+          <li>my name is Dimitri</li>
+          <li>i'm 16 years old</li>
+          <li>speaking german and english</li>
+          <li>hoping to become a software engineer 🙏</li>
+          <li>i like designing stuff</li>
+          <li>
+            <b>top music genres:</b> meme rap, amen break, somehow german rap
+          </li>
+          <li>i have a dog and a cat</li>
+          <li>certified troller</li>
+          <li>(definitely) a league of legends pro</li>
+        </ul>
+      </section>
+      <section>
+        <h2>projects</h2>
+        <ul>
+          <li>i'm lazy, so no projects (yet)</li>
+        </ul>
+      </section>
+      <section>
+        <h2>links</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/qizzle" target="_blank">github</a>
+          </li>
+          <li>
+            <a href="https://discord.gg/GqQ2PJVMD7" target="_blank"
+              >bot studio for discord server (or just add @qschnitzel)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://steamcommunity.com/id/qizzleschnitzel/"
+              target="_blank"
+              >steam</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <p>more coming soon</p>
+      </section>
+    </div>
+    <footer>
+      <p>made with 💝 by me</p>
+      <small>current theme: <text id="theme">theme</text></small>
+    </footer>
+  </body>
+  <script defer>
+    const randomItem = (array) => {
+      return array[Math.floor(Math.random() * array.length)];
+    };
+
+    const cssFiles = ["console", "modern", "comical"];
+    const randomTheme = randomItem(cssFiles);
+    const link = document.createElement("link");
+    link.href = `./css/${randomTheme}.css`;
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.media = "screen,print";
+    document.getElementsByTagName("head")[0].appendChild(link);
+    document.getElementById("theme").innerText = randomTheme;
+
+    const hellos = [
+      "hi",
+      "hallo",
+      "heyy",
+      "ahoy",
+      "hola",
+      "bonjour",
+      "privet",
+      "hai",
+      "yo",
+      "salve",
+      "👋",
+      "👉👈",
+    ];
+    document.getElementById("hello").innerText = randomItem(hellos);
+  </script>
+</html>
